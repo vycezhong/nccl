@@ -967,7 +967,6 @@ ncclResult_t ncclCommAbort(ncclComm_t comm) {
 
 NCCL_API(ncclResult_t, ncclCommMarkAbort, ncclComm_t comm);
 ncclResult_t ncclCommMarkAbort(ncclComm_t comm) {
-  NVTX3_FUNC_RANGE_IN(nccl_domain);
   if (comm == NULL)
     return ncclSuccess;
   *comm->abortFlag = 1;
